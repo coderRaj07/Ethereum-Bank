@@ -1,0 +1,297 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- web3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.4.0/web3.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="undefined" crossorigin="anonymous"></script>
+
+    <!-- sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>Title here</title>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar deep-purple accent-2">
+        <div class="mx-auto">
+            <h1> Ethereum Bank</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+                <div class="card" style="width:33.33rem; height: 42rem; ">
+                    <img src="https://cdn.pixabay.com/photo/2021/05/24/09/15/ethereum-logo-6278329_960_720.png" class="card-img-top">
+                    <div class="card-body">
+
+                        <h1 class="card-title text-center" style="padding-top: 2px;"><strong>Create Your Ethereum Account</strong></h1>
+
+                        <div class="container">
+                            <div class="col-md-12 text-center" style="padding-top:9.5px;">
+                                <button type="button" class="btn  white-text  purple accent-3 btn-medium" id="btn-balance" onclick="CreateAccount();">
+                                    Create Account</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col">
+                <div class="card" style="width:33.33rem; height: 42rem; ">
+                    <img src="https://cdn.pixabay.com/photo/2018/03/21/05/29/money-icon-3245628_960_720.jpg" class="card-img-top">
+                    <div class="card-body">
+
+                        <h1 class="card-title text-center" style="padding-top: 2px;"><strong>Know Your Account Balance</strong></h1>
+
+                        <div class="container">
+                            <div class="col-md-12 text-center" style="padding-top:9.5px;">
+                                <button type="button" class="btn  white-text  purple accent-3 btn-medium" id="btn-balance" onclick="GetBalance();">
+                                    Get Balance</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+                <div class="card" style="width:33.33rem; height: 42rem; ">
+                    <img src="https://cdn.pixabay.com/photo/2019/06/05/17/52/payment-4254220_960_720.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><strong>Deposit Ethereum</strong></h5>
+
+                        <div class="col-12" style="padding-top: 32px;">
+                            <input type="text" class="form-control" id="deposit" placeholder="Enter Deposit Amount">
+                        </div>
+
+                        <div class="container">
+                            <div class="col-md-12 text-center" style="padding-top: 38px;">
+                                <button type="button" class="btn  white-text  purple accent-3" id="btn-deposit" onclick="Deposit();">Deposit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+
+                <div class="card" style="width:33.33rem; height: 42rem; ">
+                    <img src="https://cdn.pixabay.com/photo/2018/03/28/06/43/financial-3268440_960_720.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title text-center" style="padding-top: 12.7px;"><strong>Withdraw Ethereum</strong></h5>
+
+                        <div class="col-12" style="padding-top: 30px;">
+                            <input type="text" class="form-control" id="withdraw" placeholder="Enter Withdraw Amount">
+                        </div>
+
+                        <div class="container">
+                            <div class="col-md-12 text-center" style="padding-top: 38px;">
+                                <button type="button" class="btn  white-text  purple accent-3" id="btn-withdraw" onclick="Withdraw();">Withdraw</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!--   <div class="container">
+        <div class="row">
+
+            <div class="col">
+
+                <div class="card " style="width: 33.33rem;">
+                    <img src="https://cdn.pixabay.com/photo/2018/04/19/19/40/stocks-3334074_960_720.jpg" class="card-img-top">
+                    <div class="card-body">
+
+                        <h2 class="card-title"><strong>Transfer Ethereum</strong></h2>
+
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Enter Transfer Amount">
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Reciever's Address" aria-label="Last name">
+                            </div>
+
+                        </div>
+
+                        <div class="container" style="padding-bottom: 14px;">
+                            <div class="col-md-12 text-center">
+                                <button type="button" class="btn  white-text  purple accent-3">Transfer</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col">
+                <div class="card" style="width:33.33rem; height: 42rem; ">
+                    <img src="https://cdn.pixabay.com/photo/2018/03/28/06/43/financial-3268440_960_720.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Deposit Ethereum</strong></h5>
+
+                        <div class="col-12" style="padding-top: 32px;">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Enter Deposit Amount">
+                        </div>
+
+                        <div class="container">
+                            <div class="col-md-12 text-center" style="padding-top: 38px;">
+                                <button type="button" class="btn  white-text  purple accent-3">Deposit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>  -->
+
+
+
+
+
+    <!----------------Copy the Whole-------------->
+
+    status: <span id='status'>Loading.......</span>
+
+    <script type="text/javascript">
+        async function loadweb3() {
+            if (window.ethereum) {
+                window.web3 = new Web3(window.ethereum);
+                window.ethereum.enable();
+            }
+        }
+
+        async function loadContract() {
+            //ABI & address of owner who deployed it on metamask
+            return await new window.web3.eth.Contract(/* ABI , 'Address' */);
+        }
+
+
+        async function load() {
+            await loadweb3();
+            window.contract = await loadContract();
+            updateStatus('Ready!');
+        }
+
+
+        function updateStatus(status) {
+            const statusEl = document.getElementById('status');
+            statusEl.innerHTML = status;
+            console.log(status);
+        }
+
+
+        load();
+
+        <
+        !-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - >
+
+
+
+
+
+
+
+        //Smart contract Method Button Interaction
+
+        async function GetBalance() {
+            const Balance = await window.contract.methods.getBalance().call(); //For methods which doesnot take inputs in smart contract 
+            swal(`Your Account Balance is`, `${Balance}`, `info`)
+        }
+
+        async function CreateAccount() 
+        {
+            await window.contract.methods.createAcc().call().then((result))=>
+       {
+            if(result==true)
+            {swal.fire('Account already Exists','Try other transaction methods','info')}
+             else
+            {swal.fire('Creating your user account......','Please Wait','info')}
+            });    
+        }
+        
+        async function Deposit() {
+            swal(`Depositing.....`, `Please first confirm on Metamask`, `info`)
+            var amtA = 0;
+            amtA = $('#deposit').val();
+            web3.eth.getAccounts().then(function(accountsA) {
+                var accA = accountsA[0];
+                return contract.methods.deposit(amtA).send({
+                    from: accA
+                });
+            })
+        }
+
+        async function Withdraw() {
+            swal(`Withdrawing....`, `Please first confirm on Metamask`, `warning`)
+            var amtB = 0;
+            amtB = $('#withdraw').val();
+            web3.eth.getAccounts().then(function(accountsB) {
+                var accB = accountsB[0];
+                return contract.methods.withdraw(amtB).send({
+                    from: accB
+                });
+            })
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+</body></html>
